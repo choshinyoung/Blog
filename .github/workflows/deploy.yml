@@ -1,0 +1,11 @@
+name: Deploy Quartz site
+
+on: [push]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Deploy Hook
+        run: |
+          curl -X POST "${{ secrets.DEPLOY_HOOK }}"
